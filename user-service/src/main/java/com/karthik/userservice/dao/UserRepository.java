@@ -1,0 +1,9 @@
+package com.karthik.userservice.dao;
+
+import com.karthik.userservice.domain.Users;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface UserRepository extends JpaRepository<Users, Integer>
+{
+
+}
