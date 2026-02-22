@@ -6,9 +6,10 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.Data;
 
+import java.util.List;
+
 @Entity
 @Data
-
 public class Users {
 
     @Id
@@ -19,5 +20,6 @@ public class Users {
     private String email;
     private String password;
 
+    private List<Integer> departmentIds;
 
 }
