@@ -19,4 +19,6 @@ public class Users {
     private String name;
     private String email;
     private String password;
+
+    private List<Integer> departmentIds;
 }
