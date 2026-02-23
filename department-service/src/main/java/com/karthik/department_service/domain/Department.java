@@ -6,6 +6,8 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.Data;
 
+import java.util.List;
+
 @Entity
 @Data
 public class Department
@@ -15,4 +17,6 @@ public class Department
     private Integer id;
     private String name;
     private String deptCode;
+
+    private List<Integer> usersId;
 }
