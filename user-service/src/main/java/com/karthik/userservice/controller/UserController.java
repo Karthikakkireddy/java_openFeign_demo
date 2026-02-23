@@ -5,11 +5,9 @@ import com.karthik.userservice.domain.Users;
 import com.karthik.userservice.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.apache.catalina.User;
+import org.apache.coyote.Response;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -32,6 +30,14 @@ public class UserController
     public ResponseEntity<List<Users>> registerUser()
     {
         List<Users> users = userService.getUsers();
+
+        return ResponseEntity.ok(users);
+    }
+
+    @GetMapping("/user/department/{id}")
+    public ResponseEntity<List<Integer>> getUsersByDepartment(@PathVariable Integer id)
+    {
+        List<Integer> users = userService.getUsersByDept(id);
 
         return ResponseEntity.ok(users);
     }
