@@ -6,6 +6,8 @@ import com.karthik.userservice.domain.Users;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.awt.print.Pageable;
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -22,5 +24,23 @@ public class UserService
     public List<Users> getUsers()
     {
         return userRepository.findAll();
+    }
+
+    public List<Integer> getUsersByDept(Integer deptId)
+    {
+//        List<Users> users = userRepository.findAll();
+//
+//        List<Integer> userIds = new ArrayList<>();
+//
+//        for(Users user : users)
+//        {
+//            if(deptId.equals(user.getDeptId()))
+//            {
+//                userIds.add(user.getId());
+//            }
+//        }
+
+        List<Integer> userIds = userRepository.findUsersIdByDeptId(deptId);
+        return userIds;
     }
 }
